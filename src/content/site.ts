@@ -2,8 +2,8 @@ export const BRAND = {
   name: "Geting",
   legalName: "Geting Limited",
   tagline: "AI Infrastructure, Engineered",
-  domain: "geting.hk",
-  email: "info@geting.hk",
+  domain: "geting-limited.com",
+  email: "info@geting-limited.com",
   phone: "+852 0000 0000", // TODO: replace with real number
   address: "Unit 308, 3/F., Chevalier House, 45-51 Chatham Road South, Tsim Sha Tsui, Hong Kong",
   registrationNumber: "80598211",

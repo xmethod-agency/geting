@@ -19,7 +19,7 @@ const spaceMono = Space_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://geting.hk"),
+  metadataBase: new URL("https://geting-limited.com"),
   title: {
     default: "Geting - AI Infrastructure, Engineered",
     template: "%s | Geting",
