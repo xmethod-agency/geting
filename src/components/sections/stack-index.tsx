@@ -9,8 +9,8 @@ import { TextReveal } from "@/components/text-reveal";
 
 export function StackIndex() {
   const [active, setActive] = useState<number>(0);
-  const ref = useReveal();
   const sectionRef = useRef<HTMLElement>(null);
+  useReveal(sectionRef);
   const [parallaxY, setParallaxY] = useState(0);
 
   useEffect(() => {
@@ -31,11 +31,7 @@ export function StackIndex() {
 
   return (
     <section
-      ref={(el) => {
-        sectionRef.current = el;
-        if (typeof ref === "function") ref(el);
-        else if (ref) (ref as React.MutableRefObject<HTMLElement | null>).current = el;
-      }}
+      ref={sectionRef}
       className="section-pad bg-void reveal relative z-20 -mt-8"
       style={{ transform: `translateY(${parallaxY}px)` }}
     >

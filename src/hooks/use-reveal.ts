@@ -1,9 +1,12 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, type RefObject } from "react";
 
-export function useReveal<T extends HTMLElement = HTMLElement>() {
-  const ref = useRef<T>(null);
+export function useReveal<T extends HTMLElement = HTMLElement>(
+  externalRef?: RefObject<T | null>
+) {
+  const internalRef = useRef<T>(null);
+  const ref = externalRef || internalRef;
 
   useEffect(() => {
     const el = ref.current;
@@ -21,7 +24,7 @@ export function useReveal<T extends HTMLElement = HTMLElement>() {
 
     observer.observe(el);
     return () => observer.disconnect();
-  }, []);
+  }, [ref]);
 
   return ref;
 }
