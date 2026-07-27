@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { List, X } from "@phosphor-icons/react";
 import { BRAND, NAV_LINKS } from "@/content/site";
@@ -26,9 +27,14 @@ export function Header() {
       <nav className="container-wide relative z-10 flex items-center justify-between h-[72px] gap-4">
         {/* Logo */}
         <Link href="/" className="shrink-0 group flex items-center gap-3">
-          <div className="w-9 h-9 rounded-md bg-white/[0.06] backdrop-blur-xl border border-white/[0.08] flex items-center justify-center group-hover:bg-white/[0.1] group-hover:border-white/[0.14] transition-all">
-            <span className="font-mono text-[11px] font-bold text-lime tracking-tighter">AL</span>
-          </div>
+          <Image
+            src="/logo-geting.png"
+            alt={BRAND.name}
+            width={36}
+            height={36}
+            className="rounded-md"
+            priority
+          />
         </Link>
 
         {/* Nav islands - no header bg, each item is its own glass pill */}

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { BRAND, FOOTER } from "@/content/site";
 import { FooterWordmark } from "./footer-wordmark";
 
@@ -8,8 +9,14 @@ export function Footer() {
       <div className="container-wide py-16 md:py-20 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
           <div className="md:col-span-5">
-            <Link href="/" className="flex items-center gap-2">
-              <div className="w-2 h-2 rounded-full bg-lime" />
+            <Link href="/" className="flex items-center gap-2.5">
+              <Image
+                src="/logo-geting.png"
+                alt={BRAND.name}
+                width={28}
+                height={28}
+                className="rounded-sm"
+              />
               <span className="font-mono text-sm tracking-tight text-white">
                 {BRAND.name}
               </span>
