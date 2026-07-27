@@ -12,7 +12,7 @@ export function AmberStatement() {
       ref={ref}
       className="relative bg-lime overflow-hidden reveal"
     >
-      <div className="absolute inset-0 opacity-[0.04]" aria-hidden="true">
+      <div className="absolute inset-0 opacity-[0.12]" aria-hidden="true">
         <svg className="w-full h-full">
           <defs>
             <pattern id="lime-grid" width="80" height="80" patternUnits="userSpaceOnUse">
