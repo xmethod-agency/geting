@@ -27,7 +27,9 @@ export function Hero() {
         playsInline
         className="absolute inset-0 w-full h-full object-cover opacity-55"
         aria-hidden="true"
-      />
+      >
+        <source src="/hero-bg.mp4" type="video/mp4" />
+      </video>
 
       <div className="absolute inset-0 bg-gradient-to-t from-void via-void/50 to-void/20" aria-hidden="true" />
 
