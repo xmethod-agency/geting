@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import { ArrowUpRight } from "@phosphor-icons/react";
 import { STACK_ITEMS } from "@/content/site";
@@ -10,9 +10,36 @@ import { TextReveal } from "@/components/text-reveal";
 export function StackIndex() {
   const [active, setActive] = useState<number>(0);
   const ref = useReveal();
+  const sectionRef = useRef<HTMLElement>(null);
+  const [parallaxY, setParallaxY] = useState(0);
+
+  useEffect(() => {
+    const onScroll = () => {
+      const el = sectionRef.current;
+      if (!el) return;
+      const rect = el.getBoundingClientRect();
+      const viewH = window.innerHeight;
+      if (rect.top < viewH && rect.bottom > 0) {
+        const progress = Math.max(0, Math.min(1, (viewH - rect.top) / viewH));
+        setParallaxY((1 - progress) * 60);
+      }
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <section ref={ref} className="section-pad bg-void reveal">
+    <section
+      ref={(el) => {
+        sectionRef.current = el;
+        if (typeof ref === "function") ref(el);
+        else if (ref) (ref as React.MutableRefObject<HTMLElement | null>).current = el;
+      }}
+      className="section-pad bg-void reveal relative z-20 -mt-8"
+      style={{ transform: `translateY(${parallaxY}px)` }}
+    >
+      <div className="absolute -top-16 inset-x-0 h-16 bg-gradient-to-b from-transparent to-void pointer-events-none" aria-hidden="true" />
       <div className="container-wide">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-0">
           <div className="lg:col-span-5 lg:pr-16">

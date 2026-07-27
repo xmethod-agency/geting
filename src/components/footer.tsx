@@ -13,8 +13,8 @@ export function Footer() {
               <Image
                 src="/logo-geting.png"
                 alt={BRAND.name}
-                width={28}
-                height={28}
+                width={32}
+                height={32}
                 className="rounded-sm"
               />
               <span className="font-mono text-sm tracking-tight text-white">
@@ -54,18 +54,16 @@ export function Footer() {
             >
               {BRAND.email}
             </a>
+            <p className="mt-4 text-sm text-stone/50 leading-relaxed max-w-[280px]">
+              {BRAND.address}
+            </p>
           </div>
         </div>
 
         <div className="mt-16 pt-8 border-t border-white/[0.04] flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-          <div>
-            <p className="text-mono-sm text-stone/40">
-              &copy; {FOOTER.copyright}
-            </p>
-            <p className="text-mono-sm text-stone/30 mt-1">
-              {BRAND.address}
-            </p>
-          </div>
+          <p className="text-mono-sm text-stone/40">
+            &copy; {FOOTER.copyright}
+          </p>
           <p className="text-mono-sm text-stone/40">
             AI infrastructure, engineered.
           </p>

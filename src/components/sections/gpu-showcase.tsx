@@ -2,6 +2,7 @@
 
 import { ArrowUpRight } from "@phosphor-icons/react";
 import Link from "next/link";
+import Image from "next/image";
 import { TextReveal } from "@/components/text-reveal";
 import { useReveal } from "@/hooks/use-reveal";
 
@@ -10,7 +11,7 @@ const GPU_CARDS = [
     brand: "NVIDIA",
     name: "GB200 NVL72",
     featured: true,
-    image: null, // TODO: add image path
+    image: "/gpu-gb200.png",
   },
   {
     brand: "NVIDIA",
@@ -52,16 +53,21 @@ export function GpuShowcase() {
           {GPU_CARDS.map((gpu) => (
             <div
               key={gpu.name}
-              className={`relative flex flex-col justify-between p-6 min-h-[440px] md:min-h-[520px] rounded-lg group transition-colors ${
+              className={`relative flex flex-col justify-between p-6 min-h-[440px] md:min-h-[520px] rounded-sm group transition-colors ${
                 gpu.featured ? "bg-void border border-white/[0.06]" : "bg-deep border border-white/[0.06] hover:bg-carbon"
               }`}
             >
-              {/* Image placeholder */}
               <div className="flex-1 flex items-center justify-center">
                 {gpu.image ? (
-                  <img src={gpu.image} alt={gpu.name} className="max-h-[240px] object-contain" />
+                  <Image
+                    src={gpu.image}
+                    alt={gpu.name}
+                    width={400}
+                    height={400}
+                    className="max-h-[320px] w-auto object-contain"
+                  />
                 ) : (
-                  <div className="w-full h-[200px] rounded-md border border-dashed border-white/[0.08] flex items-center justify-center">
+                  <div className="w-full h-[200px] rounded-sm border border-dashed border-white/[0.08] flex items-center justify-center">
                     <span className="text-mono-sm text-stone/40">GPU image</span>
                   </div>
                 )}
@@ -79,7 +85,7 @@ export function GpuShowcase() {
                   {gpu.featured ? (
                     <Link
                       href="/contact"
-                      className="inline-flex items-center gap-1.5 px-4 py-1.5 text-mono-sm bg-lime text-void rounded-md hover:bg-lime-deep transition-colors shrink-0"
+                      className="inline-flex items-center gap-1.5 px-4 py-1.5 text-mono-sm bg-lime text-void rounded-sm hover:bg-lime-deep transition-colors shrink-0"
                     >
                       Contact sales
                       <ArrowUpRight size={12} weight="bold" />

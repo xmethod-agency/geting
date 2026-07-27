@@ -30,9 +30,9 @@ export function Header() {
           <Image
             src="/logo-geting.png"
             alt={BRAND.name}
-            width={36}
-            height={36}
-            className="rounded-md"
+            width={40}
+            height={40}
+            className="rounded-sm"
             priority
           />
         </Link>
@@ -44,7 +44,7 @@ export function Header() {
               key={link.href}
               href={link.href}
               className={`
-                px-5 py-2 rounded-md text-[13px] transition-all duration-200
+                px-5 py-2 rounded-sm text-[13px] transition-all duration-200
                 backdrop-blur-xl border
                 ${pathname === link.href
                   ? "bg-white/[0.1] border-white/[0.12] text-white"
@@ -61,7 +61,7 @@ export function Header() {
         <div className="hidden md:block shrink-0">
           <Link
             href="/contact"
-            className="inline-flex items-center h-9 px-5 text-[13px] font-medium tracking-wide bg-lime text-void rounded-md transition-all hover:bg-lime-deep hover:shadow-[0_0_24px_var(--color-lime-dim)] active:scale-[0.97]"
+            className="inline-flex items-center h-9 px-5 text-[13px] font-medium tracking-wide bg-lime text-void rounded-sm transition-all hover:bg-lime-deep hover:shadow-[0_0_24px_var(--color-lime-dim)] active:scale-[0.97]"
           >
             Get in touch
           </Link>
@@ -70,7 +70,7 @@ export function Header() {
         {/* Mobile toggle */}
         <button
           onClick={() => setMenuOpen(!menuOpen)}
-          className="md:hidden w-9 h-9 rounded-md bg-white/[0.04] backdrop-blur-xl border border-white/[0.06] flex items-center justify-center text-white/70 hover:text-white hover:bg-white/[0.08] transition-all"
+          className="md:hidden w-9 h-9 rounded-sm bg-white/[0.04] backdrop-blur-xl border border-white/[0.06] flex items-center justify-center text-white/70 hover:text-white hover:bg-white/[0.08] transition-all"
           aria-label={menuOpen ? "Close menu" : "Open menu"}
           aria-expanded={menuOpen}
         >
@@ -91,7 +91,7 @@ export function Header() {
                 key={link.href}
                 href={link.href}
                 onClick={close}
-                className="flex items-center px-5 py-4 rounded-md bg-white/[0.04] border border-white/[0.06] text-lg font-light tracking-tight text-white/80 hover:bg-white/[0.08] hover:text-white transition-all"
+                className="flex items-center px-5 py-4 rounded-sm bg-white/[0.04] border border-white/[0.06] text-lg font-light tracking-tight text-white/80 hover:bg-white/[0.08] hover:text-white transition-all"
               >
                 {link.label}
               </Link>
@@ -99,7 +99,7 @@ export function Header() {
             <Link
               href="/contact"
               onClick={close}
-              className="mt-6 inline-flex items-center justify-center h-12 px-8 text-sm font-medium bg-lime text-void rounded-md"
+              className="mt-6 inline-flex items-center justify-center h-12 px-8 text-sm font-medium bg-lime text-void rounded-sm"
             >
               Get in touch
             </Link>

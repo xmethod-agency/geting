@@ -56,6 +56,7 @@
   }
   body {
     @apply bg-void text-silver;
+    text-wrap: pretty;
   }
   html {
     @apply font-sans antialiased;
@@ -88,6 +89,7 @@
   line-height: 1.05;
   letter-spacing: -0.06em;
   font-weight: 400;
+  text-wrap: balance;
 }
 
 @utility text-headline {
@@ -95,6 +97,7 @@
   line-height: 1.15;
   letter-spacing: -0.035em;
   font-weight: 500;
+  text-wrap: balance;
 }
 
 @utility text-title {
@@ -102,6 +105,7 @@
   line-height: 1.25;
   letter-spacing: -0.02em;
   font-weight: 500;
+  text-wrap: balance;
 }
 
 @utility text-mono-sm {

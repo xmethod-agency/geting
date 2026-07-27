@@ -25,10 +25,10 @@ export function Hero() {
       <div className="container-wide relative z-10 pb-16 md:pb-24 pt-28">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-end">
           <div>
-            <TextReveal as="h1" className="text-display text-white">
+            <TextReveal as="h1" className="text-display text-white" instant>
               {HERO.headline}
             </TextReveal>
-            <TextReveal as="p" className="mt-6 text-[15px] text-stone leading-relaxed max-w-[440px]">
+            <TextReveal as="p" className="mt-6 text-[15px] text-stone leading-relaxed max-w-[440px]" instant>
               {HERO.sub}
             </TextReveal>
             <div className="mt-8 flex items-center gap-4">
@@ -48,7 +48,7 @@ export function Hero() {
           </div>
 
           <div className="hidden lg:flex justify-end">
-            <div className="border border-white/[0.06] rounded-lg bg-void/40 backdrop-blur-sm p-6 space-y-4 min-w-[280px]">
+            <div className="border border-white/[0.06] rounded-sm bg-void/40 backdrop-blur-sm p-6 space-y-4 min-w-[280px]">
               {HERO.specs.map((spec) => (
                 <div key={spec.label} className="flex items-baseline justify-between border-b border-white/[0.04] pb-3 last:border-0 last:pb-0">
                   <span className="text-mono-sm text-stone uppercase">{spec.label}</span>

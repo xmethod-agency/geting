@@ -16,7 +16,7 @@ export function Infrastructure() {
   return (
     <section id="infrastructure" ref={ref} className="section-pad bg-deep reveal">
       <div className="container-wide">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-white/[0.04] rounded-lg overflow-hidden mb-20">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-white/[0.04] rounded-sm overflow-hidden mb-20">
           {INFRASTRUCTURE.metrics.map((m) => (
             <div key={m.label} className="bg-deep p-8 md:p-10">
               <p className="font-mono text-3xl md:text-4xl text-white tracking-tighter">
@@ -43,7 +43,7 @@ export function Infrastructure() {
             {INFRASTRUCTURE.sites.map((site) => (
               <div
                 key={site.name}
-                className="flex items-center justify-between p-4 rounded-lg bg-void/50 border border-white/[0.04] hover:border-white/[0.08] transition-colors"
+                className="flex items-center justify-between p-4 rounded-sm bg-void/50 border border-white/[0.04] hover:border-white/[0.08] transition-colors"
               >
                 <div className="flex items-center gap-3">
                   <div className={`w-1.5 h-1.5 rounded-full ${
