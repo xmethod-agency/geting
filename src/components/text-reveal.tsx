@@ -39,15 +39,17 @@ export function TextReveal({
             const viewH = window.innerHeight;
             const progress = Math.min(
               1,
-              Math.max(0, ((viewH - r.top) / (viewH + r.height)) * 1.8)
+              Math.max(0, ((viewH - r.top) / (viewH + r.height)) * 1.6)
             );
 
+            const total = chars.length;
             chars.forEach((char, i) => {
+              const charStart = (i / total) * 0.6;
               const charProgress = Math.min(
                 1,
-                Math.max(0, (progress * chars.length - i) / 8)
+                Math.max(0, (progress - charStart) / 0.4)
               );
-              char.style.opacity = `${0.2 + charProgress * 0.8}`;
+              char.style.opacity = `${0.15 + charProgress * 0.85}`;
             });
           };
 
@@ -59,7 +61,7 @@ export function TextReveal({
             window.removeEventListener("scroll", scrollHandler);
             scrollHandler = null;
           }
-          chars.forEach((c) => (c.style.opacity = "0.2"));
+          chars.forEach((c) => (c.style.opacity = "0.15"));
         }
       },
       { threshold: 0, rootMargin: "0px 0px -10% 0px" }
@@ -76,7 +78,7 @@ export function TextReveal({
     <span
       key={i}
       className="char inline-block transition-opacity duration-75"
-      style={{ opacity: instant ? 1 : 0.2 }}
+      style={{ opacity: instant ? 1 : 0.15 }}
     >
       {char === " " ? "\u00A0" : char}
     </span>

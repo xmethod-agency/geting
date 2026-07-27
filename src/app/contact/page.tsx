@@ -36,27 +36,9 @@ export default function ContactPage() {
 
               <div className="lg:col-span-6">
                 <div className="lg:sticky lg:top-28 space-y-6">
-                  <div className="grid grid-cols-1 gap-px bg-white/[0.04] rounded-lg overflow-hidden">
+                  <div className="grid grid-cols-1 gap-px bg-white/[0.04] rounded-sm overflow-hidden">
                     <InfoCell label="Email" value={BRAND.email} href={`mailto:${BRAND.email}`} />
-                    <InfoCell label="Phone" value={BRAND.phone} href={`tel:${BRAND.phone}`} />
-                    <InfoCell label="Headquarters" value="Denver, Colorado" />
-                  </div>
-
-                  <div className="border border-white/[0.06] rounded-lg bg-deep p-8 relative overflow-hidden">
-                    <div className="absolute inset-0 opacity-[0.03]" aria-hidden="true">
-                      <svg className="w-full h-full">
-                        <defs>
-                          <pattern id="contact-grid" width="40" height="40" patternUnits="userSpaceOnUse">
-                            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="currentColor" strokeWidth="0.5" />
-                          </pattern>
-                        </defs>
-                        <rect width="100%" height="100%" fill="url(#contact-grid)" />
-                      </svg>
-                    </div>
-                    <p className="relative z-10 text-mono-sm text-stone uppercase tracking-wider">
-                      Map placeholder
-                    </p>
-                    <div className="relative z-10 mt-4 w-3 h-3 rounded-full bg-lime shadow-[0_0_12px_var(--color-lime)]" />
+                    <InfoCell label="Registered Office" value={BRAND.address} />
                   </div>
 
                   <p className="text-xs text-stone/50">
@@ -91,7 +73,7 @@ function InfoCell({
 }) {
   return (
     <div className="bg-deep p-6 flex items-start justify-between gap-4">
-      <p className="text-mono-sm text-stone/60 uppercase tracking-wider">{label}</p>
+      <p className="text-mono-sm text-stone/60 uppercase tracking-wider shrink-0">{label}</p>
       {href ? (
         <a href={href} className="text-sm text-white hover:text-lime transition-colors text-right">
           {value}

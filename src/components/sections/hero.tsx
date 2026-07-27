@@ -1,13 +1,25 @@
 "use client";
 
+import { useRef, useEffect, useState } from "react";
 import Link from "next/link";
 import { HERO } from "@/content/site";
 import { TextReveal } from "@/components/text-reveal";
 
 export function Hero() {
+  const contentRef = useRef<HTMLDivElement>(null);
+  const [offset, setOffset] = useState(0);
+
+  useEffect(() => {
+    const onScroll = () => {
+      const scrollY = window.scrollY;
+      setOffset(scrollY * 0.35);
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
     <section className="relative min-h-[100dvh] flex items-end bg-void overflow-hidden">
-      {/* Background video */}
       <video
         autoPlay
         loop
@@ -15,14 +27,15 @@ export function Hero() {
         playsInline
         className="absolute inset-0 w-full h-full object-cover opacity-55"
         aria-hidden="true"
-      >
-        <source src="/hero-bg.mp4" type="video/mp4" />
-      </video>
+      />
 
-      {/* Dark overlay for text readability */}
       <div className="absolute inset-0 bg-gradient-to-t from-void via-void/50 to-void/20" aria-hidden="true" />
 
-      <div className="container-wide relative z-10 pb-16 md:pb-24 pt-28">
+      <div
+        ref={contentRef}
+        className="container-wide relative z-10 pb-16 md:pb-24 pt-28"
+        style={{ transform: `translateY(-${offset}px)` }}
+      >
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-end">
           <div>
             <TextReveal as="h1" className="text-display text-white" instant>
