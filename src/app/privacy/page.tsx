@@ -15,7 +15,7 @@ export default function PrivacyPage() {
       <main className="flex-1 pt-[72px]">
         <div className="section-pad bg-void">
           <div className="container-wide max-w-[680px]">
-            <p className="text-mono-sm text-lime uppercase tracking-widest mb-6">
+            <p className="text-mono-sm text-accent uppercase tracking-widest mb-6">
               Legal
             </p>
             <h1 className="text-headline text-white">Privacy Policy</h1>
@@ -106,12 +106,21 @@ export default function PrivacyPage() {
               </Section>
 
               <Section title="8. International Data Transfers">
-                <p>
-                  {BRAND.legalName} is incorporated in Hong Kong. If you are accessing the Site from outside Hong Kong,
-                  please be aware that your information may be transferred to, stored, and processed in Hong Kong or other
-                  jurisdictions where our service providers operate. By using the Site, you consent to the transfer of your
-                  information to countries that may have different data protection laws than your country of residence.
-                </p>
+                {BRAND.jurisdiction ? (
+                  <p>
+                    {BRAND.legalName} is incorporated in {BRAND.jurisdiction}. If you are accessing the Site from outside{" "}
+                    {BRAND.jurisdiction}, please be aware that your information may be transferred to, stored, and processed
+                    in {BRAND.jurisdiction} or other jurisdictions where our service providers operate. By using the Site,
+                    you consent to the transfer of your information to countries that may have different data protection laws
+                    than your country of residence.
+                  </p>
+                ) : (
+                  <p>
+                    Your information may be transferred to, stored, and processed in jurisdictions where we or our service
+                    providers operate. By using the Site, you consent to the transfer of your information to countries that
+                    may have different data protection laws than your country of residence.
+                  </p>
+                )}
               </Section>
 
               <Section title="9. Your Rights">
@@ -126,7 +135,7 @@ export default function PrivacyPage() {
                 </ul>
                 <p className="mt-3">
                   To exercise any of these rights, please contact us at{" "}
-                  <a href={`mailto:${BRAND.email}`} className="text-white underline underline-offset-2 hover:text-lime transition-colors">
+                  <a href={`mailto:${BRAND.email}`} className="text-white underline underline-offset-2 hover:text-accent transition-colors">
                     {BRAND.email}
                   </a>
                   . We will respond to your request within a reasonable timeframe and in accordance with applicable law.
@@ -164,9 +173,9 @@ export default function PrivacyPage() {
                 </p>
                 <div className="mt-3 p-4 bg-deep rounded-sm border border-white/[0.04] space-y-1.5">
                   <p className="text-white">{BRAND.legalName}</p>
-                  <p>{BRAND.address}</p>
+                  {BRAND.address && <p>{BRAND.address}</p>}
                   <p>
-                    <a href={`mailto:${BRAND.email}`} className="text-white underline underline-offset-2 hover:text-lime transition-colors">
+                    <a href={`mailto:${BRAND.email}`} className="text-white underline underline-offset-2 hover:text-accent transition-colors">
                       {BRAND.email}
                     </a>
                   </p>

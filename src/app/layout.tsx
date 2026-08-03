@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Space_Grotesk, Space_Mono } from "next/font/google";
 import { SmoothScroll } from "@/components/smooth-scroll";
 import { CustomCursor } from "@/components/custom-cursor";
+import { BRAND } from "@/content/site";
 import "./globals.css";
 
 const spaceGrotesk = Space_Grotesk({
@@ -19,17 +20,16 @@ const spaceMono = Space_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://geting-limited.com"),
+  metadataBase: new URL(`https://${BRAND.domain}`),
   title: {
-    default: "Geting - AI Infrastructure, Engineered",
-    template: "%s | Geting",
+    default: `${BRAND.name} - ${BRAND.tagline}`,
+    template: `%s | ${BRAND.name}`,
   },
-  description:
-    "Vertically integrated AI infrastructure. Energy, data centers, cloud, and custom software engineering.",
+  description: BRAND.description,
   openGraph: {
     type: "website",
     locale: "en_US",
-    siteName: "Geting",
+    siteName: BRAND.name,
   },
 };
 
@@ -41,6 +41,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      data-brand={BRAND.id}
       className={`${spaceGrotesk.variable} ${spaceMono.variable} dark`}
     >
       <body className="min-h-dvh flex flex-col">

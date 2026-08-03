@@ -75,7 +75,7 @@ export function GpuShowcase() {
 
               {/* Info */}
               <div className="mt-6">
-                <p className="text-mono-sm text-lime/70 uppercase tracking-widest mb-1">
+                <p className="text-mono-sm text-accent/70 uppercase tracking-widest mb-1">
                   {gpu.brand}
                 </p>
                 <div className="flex items-end justify-between gap-3">
@@ -85,7 +85,7 @@ export function GpuShowcase() {
                   {gpu.featured ? (
                     <Link
                       href="/contact"
-                      className="inline-flex items-center gap-1.5 px-4 py-1.5 text-mono-sm bg-lime text-void rounded-sm hover:bg-lime-deep transition-colors shrink-0"
+                      className="inline-flex items-center gap-1.5 px-4 py-1.5 text-mono-sm bg-accent text-void rounded-sm hover:bg-accent-deep transition-colors shrink-0"
                     >
                       Contact sales
                       <ArrowUpRight size={12} weight="bold" />

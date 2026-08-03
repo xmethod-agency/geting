@@ -58,7 +58,7 @@ export function Hero() {
             <div className="mt-8 flex items-center gap-4">
               <Link
                 href={HERO.cta.href}
-                className="inline-flex items-center h-11 px-6 text-[13px] font-medium tracking-wide uppercase bg-lime text-void rounded-sm transition-all hover:bg-lime-deep hover:shadow-[0_0_24px_var(--color-lime-dim)] active:scale-[0.98]"
+                className="inline-flex items-center h-11 px-6 text-[13px] font-medium tracking-wide uppercase bg-accent text-void rounded-sm transition-all hover:bg-accent-deep hover:shadow-[0_0_24px_var(--color-accent-dim)] active:scale-[0.98]"
               >
                 {HERO.cta.label}
               </Link>

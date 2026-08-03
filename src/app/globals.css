@@ -7,7 +7,10 @@
 @theme inline {
   --font-sans: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "Space Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+}
 
+/* Non-inline so brand palettes below can override the values at the html level. */
+@theme {
   --color-void: #000000;
   --color-carbon: #0a0a0a;
   --color-deep: #111311;
@@ -20,24 +23,23 @@
   --color-paper: #f5f6f3;
   --color-white: #ffffff;
 
-  --color-lime: #ceeb13;
-  --color-lime-deep: #b8d40e;
-  --color-lime-dim: #ceeb1330;
+  --color-accent: #ceeb13;
+  --color-accent-deep: #b8d40e;
+  --color-accent-dim: #ceeb1330;
 
   --color-background: var(--color-void);
   --color-foreground: var(--color-silver);
-  --color-primary: var(--color-lime);
+  --color-primary: var(--color-accent);
   --color-primary-foreground: var(--color-void);
   --color-secondary: var(--color-olive);
   --color-secondary-foreground: var(--color-silver);
   --color-muted: var(--color-deep);
   --color-muted-foreground: var(--color-stone);
-  --color-accent: var(--color-lime);
   --color-accent-foreground: var(--color-void);
   --color-destructive: oklch(0.65 0.2 25);
   --color-border: #1e211b;
   --color-input: #1e211b;
-  --color-ring: var(--color-lime);
+  --color-ring: var(--color-accent);
   --color-card: var(--color-deep);
   --color-card-foreground: var(--color-silver);
   --color-popover: var(--color-deep);
@@ -48,6 +50,27 @@
   --radius-lg: 12px;
   --radius-xl: 16px;
   --radius-2xl: 20px;
+}
+
+/* Brand palettes. Unlayered on purpose: these must win over the theme layer.
+   The active brand is set as data-brand on <html> at build time. */
+[data-brand="8blocks"] {
+  --color-carbon: #0a0a0b;
+  --color-deep: #0e1114;
+  --color-olive: #161a1f;
+  --color-dark-olive: #26313b;
+  --color-moss: #3f4b57;
+  --color-stone: #94a0ac;
+  --color-silver: #c2c9d1;
+  --color-cream: #e5e9ed;
+  --color-paper: #f3f5f7;
+
+  --color-accent: #3da9ff;
+  --color-accent-deep: #1f8ce6;
+  --color-accent-dim: #3da9ff30;
+
+  --color-border: #1b2028;
+  --color-input: #1b2028;
 }
 
 @layer base {
@@ -64,7 +87,7 @@
     -webkit-overflow-scrolling: touch;
   }
   ::selection {
-    background: var(--color-lime);
+    background: var(--color-accent);
     color: var(--color-void);
   }
   html.custom-cursor-active,

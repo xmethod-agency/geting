@@ -16,7 +16,7 @@ export function StackIndex() {
       <div className="container-wide">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-0">
           <div className="lg:col-span-5 lg:pr-16">
-            <p className="text-mono-sm text-lime uppercase tracking-widest mb-6">
+            <p className="text-mono-sm text-accent uppercase tracking-widest mb-6">
               The stack
             </p>
             <TextReveal as="h2" className="text-headline text-white">
@@ -35,13 +35,13 @@ export function StackIndex() {
                 <div
                   className={`flex items-start gap-6 py-6 border-t transition-all duration-300 ${
                     active === i
-                      ? "border-lime/30"
+                      ? "border-accent/30"
                       : "border-white/[0.06]"
                   }`}
                 >
                   <span
                     className={`font-mono text-xs mt-1 transition-colors duration-300 ${
-                      active === i ? "text-lime" : "text-stone/40"
+                      active === i ? "text-accent" : "text-stone/40"
                     }`}
                   >
                     0{i + 1}
@@ -68,7 +68,7 @@ export function StackIndex() {
                         </p>
                         <Link
                           href={`/services#${item.anchor}`}
-                          className="inline-flex items-center gap-1 mt-3 text-[13px] text-lime hover:text-lime-deep transition-colors"
+                          className="inline-flex items-center gap-1 mt-3 text-[13px] text-accent hover:text-accent-deep transition-colors"
                           onClick={(e) => e.stopPropagation()}
                         >
                           Learn more
@@ -81,7 +81,7 @@ export function StackIndex() {
                   <div
                     className={`hidden md:block w-1.5 h-1.5 rounded-full mt-2 transition-all duration-300 ${
                       active === i
-                        ? "bg-lime shadow-[0_0_8px_var(--color-lime)]"
+                        ? "bg-accent shadow-[0_0_8px_var(--color-accent)]"
                         : "bg-white/10"
                     }`}
                   />

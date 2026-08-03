@@ -10,20 +10,21 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
           <div className="md:col-span-5">
             <Link href="/" className="flex items-center gap-2.5">
-              <Image
-                src="/logo-geting.png"
-                alt={BRAND.name}
-                width={32}
-                height={32}
-                className="rounded-sm"
-              />
+              {BRAND.logo && (
+                <Image
+                  src={BRAND.logo}
+                  alt={BRAND.name}
+                  width={32}
+                  height={32}
+                  className="rounded-sm"
+                />
+              )}
               <span className="font-mono text-sm tracking-tight text-white">
                 {BRAND.name}
               </span>
             </Link>
             <p className="mt-4 text-sm text-stone max-w-[300px] leading-relaxed">
-              Vertically integrated AI infrastructure. Energy, data centers,
-              cloud, and custom software engineering.
+              {BRAND.description}
             </p>
           </div>
 
@@ -54,9 +55,11 @@ export function Footer() {
             >
               {BRAND.email}
             </a>
-            <p className="mt-4 text-sm text-stone/50 leading-relaxed max-w-[280px]">
-              {BRAND.address}
-            </p>
+            {BRAND.address && (
+              <p className="mt-4 text-sm text-stone/50 leading-relaxed max-w-[280px]">
+                {BRAND.address}
+              </p>
+            )}
           </div>
         </div>
 
@@ -64,9 +67,7 @@ export function Footer() {
           <p className="text-mono-sm text-stone/40">
             &copy; {FOOTER.copyright}
           </p>
-          <p className="text-mono-sm text-stone/40">
-            AI infrastructure, engineered.
-          </p>
+          <p className="text-mono-sm text-stone/40">{BRAND.tagline}</p>
         </div>
       </div>
 

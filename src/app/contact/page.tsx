@@ -19,7 +19,7 @@ export default function ContactPage() {
           <div className="container-wide">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-0">
               <div className="lg:col-span-6 lg:pr-20">
-                <p className="text-mono-sm text-lime uppercase tracking-widest mb-6">
+                <p className="text-mono-sm text-accent uppercase tracking-widest mb-6">
                   Contact
                 </p>
                 <h1 className="text-display text-white">
@@ -38,7 +38,9 @@ export default function ContactPage() {
                 <div className="lg:sticky lg:top-28 space-y-6">
                   <div className="grid grid-cols-1 gap-px bg-white/[0.04] rounded-sm overflow-hidden">
                     <InfoCell label="Email" value={BRAND.email} href={`mailto:${BRAND.email}`} />
-                    <InfoCell label="Registered Office" value={BRAND.address} />
+                    {BRAND.address && (
+                      <InfoCell label="Registered Office" value={BRAND.address} />
+                    )}
                   </div>
 
                   <p className="text-xs text-stone/50">
@@ -75,7 +77,7 @@ function InfoCell({
     <div className="bg-deep p-6 flex items-start justify-between gap-4">
       <p className="text-mono-sm text-stone/60 uppercase tracking-wider shrink-0">{label}</p>
       {href ? (
-        <a href={href} className="text-sm text-white hover:text-lime transition-colors text-right">
+        <a href={href} className="text-sm text-white hover:text-accent transition-colors text-right">
           {value}
         </a>
       ) : (

@@ -45,8 +45,8 @@ export function ContactForm() {
 
   if (status === "sent") {
     return (
-      <div className="border border-lime/20 rounded-lg bg-lime/5 p-8">
-        <div className="w-2 h-2 rounded-full bg-lime shadow-[0_0_8px_var(--color-lime)] mb-4" />
+      <div className="border border-accent/20 rounded-lg bg-accent/5 p-8">
+        <div className="w-2 h-2 rounded-full bg-accent shadow-[0_0_8px_var(--color-accent)] mb-4" />
         <p className="text-white text-lg font-medium tracking-tight">
           Message received.
         </p>
@@ -106,7 +106,7 @@ export function ContactForm() {
       <button
         type="submit"
         disabled={status === "sending"}
-        className="inline-flex items-center justify-center h-11 px-8 text-[13px] font-medium tracking-wide uppercase bg-lime text-void rounded-sm transition-all hover:bg-lime-deep hover:shadow-[0_0_24px_var(--color-lime-dim)] active:scale-[0.98] disabled:opacity-50"
+        className="inline-flex items-center justify-center h-11 px-8 text-[13px] font-medium tracking-wide uppercase bg-accent text-void rounded-sm transition-all hover:bg-accent-deep hover:shadow-[0_0_24px_var(--color-accent-dim)] active:scale-[0.98] disabled:opacity-50"
       >
         {status === "sending" ? "Sending..." : "Send message"}
       </button>
@@ -133,7 +133,7 @@ function Field({
         {label}
         {optional && <span className="text-stone/60 ml-1.5">(optional)</span>}
       </label>
-      <div className="[&_.form-input]:w-full [&_.form-input]:bg-deep [&_.form-input]:border [&_.form-input]:border-white/[0.08] [&_.form-input]:rounded-md [&_.form-input]:px-4 [&_.form-input]:py-3 [&_.form-input]:text-sm [&_.form-input]:text-white [&_.form-input]:placeholder:text-stone/40 [&_.form-input]:focus:outline-none [&_.form-input]:focus:border-lime/40 [&_.form-input]:focus:ring-1 [&_.form-input]:focus:ring-lime/20 [&_.form-input]:transition-colors [&_.form-input]:aria-[invalid=true]:border-red-500/50">
+      <div className="[&_.form-input]:w-full [&_.form-input]:bg-deep [&_.form-input]:border [&_.form-input]:border-white/[0.08] [&_.form-input]:rounded-md [&_.form-input]:px-4 [&_.form-input]:py-3 [&_.form-input]:text-sm [&_.form-input]:text-white [&_.form-input]:placeholder:text-stone/40 [&_.form-input]:focus:outline-none [&_.form-input]:focus:border-accent/40 [&_.form-input]:focus:ring-1 [&_.form-input]:focus:ring-accent/20 [&_.form-input]:transition-colors [&_.form-input]:aria-[invalid=true]:border-red-500/50">
         {children}
       </div>
       {error && (

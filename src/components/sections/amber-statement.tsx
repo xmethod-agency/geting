@@ -10,16 +10,16 @@ export function AmberStatement() {
   return (
     <section
       ref={ref}
-      className="relative bg-lime overflow-hidden reveal"
+      className="relative bg-accent overflow-hidden reveal"
     >
       <div className="absolute inset-0 opacity-[0.12]" aria-hidden="true">
         <svg className="w-full h-full">
           <defs>
-            <pattern id="lime-grid" width="80" height="80" patternUnits="userSpaceOnUse">
+            <pattern id="accent-grid" width="80" height="80" patternUnits="userSpaceOnUse">
               <path d="M 80 0 L 0 0 0 80" fill="none" stroke="#000" strokeWidth="1" />
             </pattern>
           </defs>
-          <rect width="100%" height="100%" fill="url(#lime-grid)" />
+          <rect width="100%" height="100%" fill="url(#accent-grid)" />
         </svg>
       </div>
 

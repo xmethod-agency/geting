@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useEffect, useState } from "react";
+import { BRAND } from "@/content/site";
 
 export function FooterWordmark() {
   const wrapRef = useRef<HTMLDivElement>(null);
@@ -34,12 +35,12 @@ export function FooterWordmark() {
       aria-hidden="true"
     >
       <p
-        className="font-mono text-[clamp(6rem,20vw,18rem)] leading-[0.8] tracking-[-0.06em] text-center whitespace-nowrap absolute inset-x-0 bottom-0 text-lime"
+        className="font-mono text-[clamp(6rem,20vw,18rem)] leading-[0.8] tracking-[-0.06em] text-center whitespace-nowrap absolute inset-x-0 bottom-0 text-accent"
         style={{
           transform: `translateY(${translateY}%)`,
         }}
       >
-        GETING
+        {BRAND.wordmark}
       </p>
     </div>
   );

@@ -5,7 +5,7 @@ import { useReveal } from "@/hooks/use-reveal";
 import { TextReveal } from "@/components/text-reveal";
 
 const statusStyle = {
-  LIVE: "bg-lime/20 text-lime border-lime/30",
+  LIVE: "bg-accent/20 text-accent border-accent/30",
   BUILD: "bg-white/5 text-white border-white/10",
   PLANNED: "bg-white/5 text-stone border-white/[0.06]",
 } as const;
@@ -47,7 +47,7 @@ export function Infrastructure() {
               >
                 <div className="flex items-center gap-3">
                   <div className={`w-1.5 h-1.5 rounded-full ${
-                    site.status === "LIVE" ? "bg-lime shadow-[0_0_6px_var(--color-lime)]" :
+                    site.status === "LIVE" ? "bg-accent shadow-[0_0_6px_var(--color-accent)]" :
                     site.status === "BUILD" ? "bg-white/60" : "bg-white/20"
                   }`} />
                   <span className="text-sm text-white">{site.name}</span>

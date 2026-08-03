@@ -27,14 +27,20 @@ export function Header() {
       <nav className="container-wide relative z-10 flex items-center justify-between h-[72px] gap-4">
         {/* Logo */}
         <Link href="/" className="shrink-0 group flex items-center gap-3">
-          <Image
-            src="/logo-geting.png"
-            alt={BRAND.name}
-            width={40}
-            height={40}
-            className="rounded-sm"
-            priority
-          />
+          {BRAND.logo ? (
+            <Image
+              src={BRAND.logo}
+              alt={BRAND.name}
+              width={40}
+              height={40}
+              className="rounded-sm"
+              priority
+            />
+          ) : (
+            <span className="font-mono text-lg tracking-tight text-white">
+              {BRAND.name}
+            </span>
+          )}
         </Link>
 
         {/* Nav islands - no header bg, each item is its own glass pill */}
@@ -61,7 +67,7 @@ export function Header() {
         <div className="hidden md:block shrink-0">
           <Link
             href="/contact"
-            className="inline-flex items-center h-9 px-5 text-[13px] font-medium tracking-wide bg-lime text-void rounded-sm transition-all hover:bg-lime-deep hover:shadow-[0_0_24px_var(--color-lime-dim)] active:scale-[0.97]"
+            className="inline-flex items-center h-9 px-5 text-[13px] font-medium tracking-wide bg-accent text-void rounded-sm transition-all hover:bg-accent-deep hover:shadow-[0_0_24px_var(--color-accent-dim)] active:scale-[0.97]"
           >
             Get in touch
           </Link>
@@ -99,7 +105,7 @@ export function Header() {
             <Link
               href="/contact"
               onClick={close}
-              className="mt-6 inline-flex items-center justify-center h-12 px-8 text-sm font-medium bg-lime text-void rounded-sm"
+              className="mt-6 inline-flex items-center justify-center h-12 px-8 text-sm font-medium bg-accent text-void rounded-sm"
             >
               Get in touch
             </Link>

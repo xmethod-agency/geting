@@ -81,10 +81,10 @@ export function CustomCursor() {
     >
       <div
         className={`
-          -translate-x-1/2 -translate-y-1/2 border border-lime transition-all duration-200 ease-out
+          -translate-x-1/2 -translate-y-1/2 border border-accent transition-all duration-200 ease-out
           ${hovering
-            ? "w-10 h-10 bg-lime/20 rotate-45 scale-110"
-            : "w-4 h-4 bg-lime/40 rotate-0 scale-100"
+            ? "w-10 h-10 bg-accent/20 rotate-45 scale-110"
+            : "w-4 h-4 bg-accent/40 rotate-0 scale-100"
           }
         `}
       />

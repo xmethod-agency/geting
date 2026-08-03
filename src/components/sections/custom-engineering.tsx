@@ -15,7 +15,7 @@ export function CustomEngineering() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-0">
           <div className="lg:col-span-4 lg:pr-12">
             <div className="lg:sticky lg:top-28">
-              <p className="text-mono-sm text-lime uppercase tracking-widest mb-6">
+              <p className="text-mono-sm text-accent uppercase tracking-widest mb-6">
                 Engineering
               </p>
               <TextReveal as="h2" className="text-headline text-white">
@@ -39,7 +39,7 @@ export function CustomEngineering() {
                   <div
                     className={`w-1 h-1 rounded-full mt-2 transition-all duration-300 ${
                       hovered === i
-                        ? "bg-lime shadow-[0_0_8px_var(--color-lime)]"
+                        ? "bg-accent shadow-[0_0_8px_var(--color-accent)]"
                         : "bg-white/10"
                     }`}
                   />
