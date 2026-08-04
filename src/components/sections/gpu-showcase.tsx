@@ -17,19 +17,13 @@ const GPU_CARDS = [
     brand: "NVIDIA",
     name: "HGX B200",
     featured: false,
-    image: null,
+    image: "/gpu-hgx-b200.png",
   },
   {
     brand: "AMD",
     name: "MI355x",
     featured: false,
-    image: null,
-  },
-  {
-    brand: "AMD",
-    name: "MI300x",
-    featured: false,
-    image: null,
+    image: "/gpu-mi355x.png",
   },
 ] as const;
 
@@ -49,28 +43,21 @@ export function GpuShowcase() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[5px]">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-[5px]">
           {GPU_CARDS.map((gpu) => (
             <div
               key={gpu.name}
-              className={`relative flex flex-col justify-between p-6 min-h-[440px] md:min-h-[520px] rounded-sm group transition-colors ${
-                gpu.featured ? "bg-void border border-white/[0.06]" : "bg-deep border border-white/[0.06] hover:bg-carbon"
-              }`}
+              className="relative flex flex-col justify-between p-6 min-h-[440px] md:min-h-[520px] rounded-sm group bg-void border border-white/[0.06] hover:border-white/[0.14] transition-colors"
             >
               <div className="flex-1 flex items-center justify-center">
-                {gpu.image ? (
-                  <Image
-                    src={gpu.image}
-                    alt={gpu.name}
-                    width={400}
-                    height={400}
-                    className="max-h-[320px] w-auto object-contain"
-                  />
-                ) : (
-                  <div className="w-full h-[200px] rounded-sm border border-dashed border-white/[0.08] flex items-center justify-center">
-                    <span className="text-mono-sm text-stone/40">GPU image</span>
-                  </div>
-                )}
+                <Image
+                  src={gpu.image}
+                  alt={gpu.name}
+                  width={450}
+                  height={562}
+                  sizes="(min-width: 768px) 33vw, 100vw"
+                  className="max-h-[340px] w-auto object-contain"
+                />
               </div>
 
               {/* Info */}
